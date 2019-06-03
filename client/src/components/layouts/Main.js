@@ -1,11 +1,13 @@
-import React from 'react'
+import React from 'react';
+
+import Form from '../forms/Form';
 
 const Main = () => {
   return (
-    <main>
-      <h1>Main Component</h1>
+    <main className="main">
+      <Form />
     </main>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;

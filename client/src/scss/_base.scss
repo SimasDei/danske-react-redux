@@ -1,5 +1,8 @@
 $color-primary: #003755;
+$color-primary-light: #d7e9f1;
 $color-secondary: #009edd;
+
+$max-width: 58.75em;
 
 *,
 *::before,
@@ -9,8 +12,17 @@ $color-secondary: #009edd;
   box-sizing: inherit;
 }
 
-body {
+html {
   font-size: 62.5%;
   box-sizing: border-box;
-  background-color: $color-secondary;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: $color-primary-light;
+}
+
+.main {
+  max-width: $max-width;
+  margin: 0 auto;
 }
