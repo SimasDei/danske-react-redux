@@ -1,0 +1,27 @@
+{
+  "name": "danske-react-redux",
+  "version": "1.0.0",
+  "description": "Rest API APP  /w React ",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimasDei/danske-react-redux.git"
+  },
+  "author": "Simas Dei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SimasDei/danske-react-redux/issues"
+  },
+  "homepage": "https://github.com/SimasDei/danske-react-redux#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.19.1"
+  }
+}
