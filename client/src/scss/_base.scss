@@ -1,0 +1,16 @@
+$color-primary: #003755;
+$color-secondary: #009edd;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  background-color: $color-secondary;
+}
