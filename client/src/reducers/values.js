@@ -5,6 +5,7 @@ import {
   SET_FOURTH_VALUE,
   SET_LOADING,
   CLEAR_VALUE,
+  TOGGLE_MODAL,
 } from '../actions/types.js';
 
 const initialState = {
@@ -15,6 +16,7 @@ const initialState = {
   val5: null,
   val6: null,
   loading: false,
+  modal: false,
 };
 
 export default function(state = initialState, action) {
@@ -50,6 +52,12 @@ export default function(state = initialState, action) {
       return {
         ...state,
         state: initialState,
+      };
+    }
+    case TOGGLE_MODAL: {
+      return {
+        ...state,
+        modal: !state.modal,
       };
     }
     default:

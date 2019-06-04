@@ -2,12 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { clearValue } from '../../actions/values';
+import { clearValue, toggleModal } from '../../actions/values';
 
-const Modal = ({ clearValue, children }) => {
+const Modal = ({ clearValue, children, toggleModal }) => {
   const onClickHandler = () => {
-    console.log('close modal, please');
     clearValue();
+    toggleModal();
   };
   return (
     <figure className="modal">
@@ -24,9 +24,10 @@ const Modal = ({ clearValue, children }) => {
 
 Modal.propTypes = {
   clearValue: PropTypes.func,
+  toggleModal: PropTypes.func.isRequired,
 };
 
 export default connect(
   null,
-  { clearValue },
+  { clearValue, toggleModal },
 )(Modal);

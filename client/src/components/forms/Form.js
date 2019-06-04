@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { setValue } from '../../actions/values';
+import { setValue, toggleModal } from '../../actions/values';
 
 import Modal from '../modal/Modal';
 import Backdrop from '../modal/Backdrop';
 
-const Form = ({ setValue, loading, val6 }) => {
+const Form = ({ setValue, toggleModal, loading, val6, modal }) => {
   const [formData, setFormData] = useState({
     val1: '',
     error: '',
@@ -40,6 +40,8 @@ const Form = ({ setValue, loading, val6 }) => {
     e.preventDefault();
     const formData = { val1: parseInt(val1) };
     setValue(formData);
+    toggleModal();
+    formData.val1 = '';
   };
 
   return (
@@ -66,8 +68,8 @@ const Form = ({ setValue, loading, val6 }) => {
           {loading ? 'Loading...' : 'Submit'}
         </button>
       </form>
-      {val6 && <Backdrop />}
-      {val6 && <Modal>Final value: {val6}</Modal>}
+      {modal && <Backdrop />}
+      {modal && <Modal>Final value: {val6}</Modal>}
     </section>
   );
 };
@@ -75,15 +77,18 @@ const Form = ({ setValue, loading, val6 }) => {
 const mapStateToProps = state => ({
   loading: state.values.loading,
   val6: state.values.val6,
+  modal: state.values.modal,
 });
 
 Form.propTypes = {
   setValue: PropTypes.func,
+  toggleModal: PropTypes.func.isRequired,
   loading: PropTypes.bool,
   val6: PropTypes.any,
+  modal: PropTypes.bool.isRequired,
 };
 
 export default connect(
   mapStateToProps,
-  { setValue },
+  { setValue, toggleModal },
 )(Form);

@@ -7,6 +7,7 @@ import {
   SET_FOURTH_VALUE,
   SET_LOADING,
   CLEAR_VALUE,
+  TOGGLE_MODAL,
 } from './types';
 
 export const setValue = formData => dispatch => {
@@ -48,3 +49,5 @@ export const setValue = formData => dispatch => {
 };
 
 export const clearValue = () => dispatch => dispatch({ type: CLEAR_VALUE });
+
+export const toggleModal = () => dispatch => dispatch({ type: TOGGLE_MODAL });
