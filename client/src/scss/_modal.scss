@@ -1,0 +1,42 @@
+.modal {
+  width: 80%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 20vh;
+  left: 10%;
+
+  &__header {
+    padding: 2rem;
+    background-color: $color-primary;
+
+    h1 {
+      color: #fff;
+      text-align: center;
+    }
+  }
+  &__content {
+    padding: 2rem;
+    color: #999;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 2rem;
+  }
+
+  @media (min-width: 800px) {
+    width: 50rem;
+    left: calc((100% - 50rem) / 2);
+  }
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
