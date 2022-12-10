@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/SimasDei/danske-react-redux#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
